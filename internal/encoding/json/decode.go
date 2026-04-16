@@ -14,7 +14,7 @@ import (
 	"encoding"
 	"encoding/base64"
 	"fmt"
-	"github.com/stainless-sdks/rain-hello-world-go/internal/encoding/json/shims"
+	"github.com/SignifyHQ/rain-sdk-go/internal/encoding/json/shims"
 	"reflect"
 	"strconv"
 	"strings"

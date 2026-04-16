@@ -18,10 +18,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/stainless-sdks/rain-hello-world-go/internal"
-	"github.com/stainless-sdks/rain-hello-world-go/internal/apierror"
-	"github.com/stainless-sdks/rain-hello-world-go/internal/apiform"
-	"github.com/stainless-sdks/rain-hello-world-go/internal/apiquery"
+	"github.com/SignifyHQ/rain-sdk-go/internal"
+	"github.com/SignifyHQ/rain-sdk-go/internal/apierror"
+	"github.com/SignifyHQ/rain-sdk-go/internal/apiform"
+	"github.com/SignifyHQ/rain-sdk-go/internal/apiquery"
 )
 
 func getDefaultHeaders() map[string]string {

@@ -10,9 +10,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/stainless-sdks/rain-hello-world-go"
-	"github.com/stainless-sdks/rain-hello-world-go/internal"
-	"github.com/stainless-sdks/rain-hello-world-go/option"
+	"github.com/SignifyHQ/rain-sdk-go"
+	"github.com/SignifyHQ/rain-sdk-go/internal"
+	"github.com/SignifyHQ/rain-sdk-go/option"
 )
 
 type closureTransport struct {

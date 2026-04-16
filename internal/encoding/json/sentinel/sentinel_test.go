@@ -1,8 +1,8 @@
 package sentinel_test
 
 import (
-	"github.com/stainless-sdks/rain-hello-world-go/internal/encoding/json/sentinel"
-	"github.com/stainless-sdks/rain-hello-world-go/packages/param"
+	"github.com/SignifyHQ/rain-sdk-go/internal/encoding/json/sentinel"
+	"github.com/SignifyHQ/rain-sdk-go/packages/param"
 	"reflect"
 	"slices"
 	"testing"

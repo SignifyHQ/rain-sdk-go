@@ -10,13 +10,13 @@ import (
 	"net/url"
 	"slices"
 
-	"github.com/stainless-sdks/rain-hello-world-go/internal/apijson"
-	"github.com/stainless-sdks/rain-hello-world-go/internal/apiquery"
-	shimjson "github.com/stainless-sdks/rain-hello-world-go/internal/encoding/json"
-	"github.com/stainless-sdks/rain-hello-world-go/internal/requestconfig"
-	"github.com/stainless-sdks/rain-hello-world-go/option"
-	"github.com/stainless-sdks/rain-hello-world-go/packages/param"
-	"github.com/stainless-sdks/rain-hello-world-go/packages/respjson"
+	"github.com/SignifyHQ/rain-sdk-go/internal/apijson"
+	"github.com/SignifyHQ/rain-sdk-go/internal/apiquery"
+	shimjson "github.com/SignifyHQ/rain-sdk-go/internal/encoding/json"
+	"github.com/SignifyHQ/rain-sdk-go/internal/requestconfig"
+	"github.com/SignifyHQ/rain-sdk-go/option"
+	"github.com/SignifyHQ/rain-sdk-go/packages/param"
+	"github.com/SignifyHQ/rain-sdk-go/packages/respjson"
 )
 
 // UserService contains methods and other services that help with interacting with

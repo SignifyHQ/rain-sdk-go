@@ -3,7 +3,7 @@
 package rainhelloworld
 
 import (
-	"github.com/stainless-sdks/rain-hello-world-go/option"
+	"github.com/SignifyHQ/rain-sdk-go/option"
 )
 
 // ApplicationService contains methods and other services that help with

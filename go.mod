@@ -1,4 +1,4 @@
-module github.com/stainless-sdks/rain-hello-world-go
+module github.com/SignifyHQ/rain-sdk-go
 
 go 1.22
 

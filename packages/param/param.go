@@ -2,7 +2,7 @@ package param
 
 import (
 	"encoding/json"
-	"github.com/stainless-sdks/rain-hello-world-go/internal/encoding/json/sentinel"
+	"github.com/SignifyHQ/rain-sdk-go/internal/encoding/json/sentinel"
 	"reflect"
 )
 

@@ -7,8 +7,8 @@ import (
 	"net/http"
 	"slices"
 
-	"github.com/stainless-sdks/rain-hello-world-go/internal/requestconfig"
-	"github.com/stainless-sdks/rain-hello-world-go/option"
+	"github.com/SignifyHQ/rain-sdk-go/internal/requestconfig"
+	"github.com/SignifyHQ/rain-sdk-go/option"
 )
 
 // ContractService contains methods and other services that help with interacting

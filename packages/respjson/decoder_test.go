@@ -3,8 +3,8 @@ package respjson_test
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/stainless-sdks/rain-hello-world-go/internal/apijson"
-	rj "github.com/stainless-sdks/rain-hello-world-go/packages/respjson"
+	"github.com/SignifyHQ/rain-sdk-go/internal/apijson"
+	rj "github.com/SignifyHQ/rain-sdk-go/packages/respjson"
 	"reflect"
 	"testing"
 )

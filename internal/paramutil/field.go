@@ -1,8 +1,8 @@
 package paramutil
 
 import (
-	"github.com/stainless-sdks/rain-hello-world-go/packages/param"
-	"github.com/stainless-sdks/rain-hello-world-go/packages/respjson"
+	"github.com/SignifyHQ/rain-sdk-go/packages/param"
+	"github.com/SignifyHQ/rain-sdk-go/packages/respjson"
 )
 
 func AddrIfPresent[T comparable](v param.Opt[T]) *T {

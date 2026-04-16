@@ -8,8 +8,8 @@ import (
 	"os"
 	"slices"
 
-	"github.com/stainless-sdks/rain-hello-world-go/internal/requestconfig"
-	"github.com/stainless-sdks/rain-hello-world-go/option"
+	"github.com/SignifyHQ/rain-sdk-go/internal/requestconfig"
+	"github.com/SignifyHQ/rain-sdk-go/option"
 )
 
 // Client creates a struct with services and top level methods that help with
