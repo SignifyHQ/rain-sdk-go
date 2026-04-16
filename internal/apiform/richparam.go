@@ -1,7 +1,7 @@
 package apiform
 
 import (
-	"github.com/stainless-sdks/rain-hello-world-go/packages/param"
+	"github.com/SignifyHQ/rain-sdk-go/packages/param"
 	"mime/multipart"
 	"reflect"
 )

@@ -12,10 +12,10 @@ import (
 	"net/http"
 	"slices"
 
-	"github.com/stainless-sdks/rain-hello-world-go/internal/apiform"
-	"github.com/stainless-sdks/rain-hello-world-go/internal/requestconfig"
-	"github.com/stainless-sdks/rain-hello-world-go/option"
-	"github.com/stainless-sdks/rain-hello-world-go/packages/param"
+	"github.com/SignifyHQ/rain-sdk-go/internal/apiform"
+	"github.com/SignifyHQ/rain-sdk-go/internal/requestconfig"
+	"github.com/SignifyHQ/rain-sdk-go/option"
+	"github.com/SignifyHQ/rain-sdk-go/packages/param"
 )
 
 // ApplicationCompanyUboDocumentService contains methods and other services that

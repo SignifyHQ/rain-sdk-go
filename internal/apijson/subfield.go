@@ -1,7 +1,7 @@
 package apijson
 
 import (
-	"github.com/stainless-sdks/rain-hello-world-go/packages/respjson"
+	"github.com/SignifyHQ/rain-sdk-go/packages/respjson"
 	"reflect"
 )
 
