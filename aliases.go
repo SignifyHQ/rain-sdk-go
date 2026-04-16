@@ -3,8 +3,8 @@
 package rainhelloworld
 
 import (
-	"github.com/stainless-sdks/rain-hello-world-go/internal/apierror"
-	"github.com/stainless-sdks/rain-hello-world-go/packages/param"
+	"github.com/SignifyHQ/rain-sdk-go/internal/apierror"
+	"github.com/SignifyHQ/rain-sdk-go/packages/param"
 )
 
 // aliased to make [param.APIUnion] private when embedding

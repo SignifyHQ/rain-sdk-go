@@ -2,7 +2,7 @@ package param_test
 
 import (
 	"encoding/json"
-	"github.com/stainless-sdks/rain-hello-world-go/packages/param"
+	"github.com/SignifyHQ/rain-sdk-go/packages/param"
 	"testing"
 )
 

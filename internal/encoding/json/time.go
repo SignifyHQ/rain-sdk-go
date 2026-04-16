@@ -2,7 +2,7 @@
 package json
 
 import (
-	"github.com/stainless-sdks/rain-hello-world-go/internal/encoding/json/shims"
+	"github.com/SignifyHQ/rain-sdk-go/internal/encoding/json/shims"
 	"reflect"
 	"time"
 )

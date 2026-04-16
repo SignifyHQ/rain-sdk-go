@@ -7,7 +7,7 @@ package apijson
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/stainless-sdks/rain-hello-world-go/packages/param"
+	"github.com/SignifyHQ/rain-sdk-go/packages/param"
 	"reflect"
 	"strconv"
 	"sync"

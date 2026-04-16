@@ -3,7 +3,7 @@ package param
 import (
 	"encoding/json"
 	"fmt"
-	shimjson "github.com/stainless-sdks/rain-hello-world-go/internal/encoding/json"
+	shimjson "github.com/SignifyHQ/rain-sdk-go/internal/encoding/json"
 	"time"
 )
 

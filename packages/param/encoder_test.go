@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/stainless-sdks/rain-hello-world-go/packages/param"
+	"github.com/SignifyHQ/rain-sdk-go/packages/param"
 )
 
 type Struct struct {

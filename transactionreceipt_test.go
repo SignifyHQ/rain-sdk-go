@@ -12,9 +12,9 @@ import (
 	"os"
 	"testing"
 
-	"github.com/stainless-sdks/rain-hello-world-go"
-	"github.com/stainless-sdks/rain-hello-world-go/internal/testutil"
-	"github.com/stainless-sdks/rain-hello-world-go/option"
+	"github.com/SignifyHQ/rain-sdk-go"
+	"github.com/SignifyHQ/rain-sdk-go/internal/testutil"
+	"github.com/SignifyHQ/rain-sdk-go/option"
 )
 
 func TestTransactionReceiptGet(t *testing.T) {
