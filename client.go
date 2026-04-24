@@ -33,7 +33,7 @@ type Client struct {
 // DefaultClientOptions read from the environment (RAIN_API_KEY, RAIN_BASE_URL).
 // This should be used to initialize new clients.
 func DefaultClientOptions() []option.RequestOption {
-	defaults := []option.RequestOption{option.WithEnvironmentDev()}
+	defaults := []option.RequestOption{option.WithHTTPClient(defaultHTTPClient()), option.WithEnvironmentDev()}
 	if o, ok := os.LookupEnv("RAIN_BASE_URL"); ok {
 		defaults = append(defaults, option.WithBaseURL(o))
 	}
