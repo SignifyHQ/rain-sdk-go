@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package rainhelloworld_test
+package rainsdk_test
 
 import (
 	"bytes"
@@ -25,39 +25,39 @@ func TestApplicationCompanyNewWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := rainhelloworld.NewClient(
+	client := rainsdk.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithAPIKey("My API Key"),
 	)
-	_, err := client.Applications.Company.New(context.TODO(), rainhelloworld.ApplicationCompanyNewParams{
-		Address: rainhelloworld.PhysicalAddressParam{
+	_, err := client.Applications.Company.New(context.TODO(), rainsdk.ApplicationCompanyNewParams{
+		Address: rainsdk.PhysicalAddressParam{
 			City:        "city",
 			Country:     "country",
 			CountryCode: "xx",
 			Line1:       "line1",
 			PostalCode:  "postalCode",
 			Region:      "region",
-			Line2:       rainhelloworld.String("line2"),
+			Line2:       rainsdk.String("line2"),
 		},
-		Entity: rainhelloworld.ApplicationCompanyNewParamsEntity{
+		Entity: rainsdk.ApplicationCompanyNewParamsEntity{
 			Name:               "name",
 			RegistrationNumber: "registrationNumber",
 			TaxID:              "taxId",
 			Website:            "website",
-			Description:        rainhelloworld.String("description"),
-			ExpectedSpend:      rainhelloworld.String("expectedSpend"),
-			Type:               rainhelloworld.String("type"),
+			Description:        rainsdk.String("description"),
+			ExpectedSpend:      rainsdk.String("expectedSpend"),
+			Type:               rainsdk.String("type"),
 		},
-		InitialUser: rainhelloworld.ApplicationCompanyNewParamsInitialUser{
-			IssuingApplicationPersonParam: rainhelloworld.IssuingApplicationPersonParam{
-				Address: rainhelloworld.PhysicalAddressParam{
+		InitialUser: rainsdk.ApplicationCompanyNewParamsInitialUser{
+			IssuingApplicationPersonParam: rainsdk.IssuingApplicationPersonParam{
+				Address: rainsdk.PhysicalAddressParam{
 					City:        "city",
 					Country:     "country",
 					CountryCode: "xx",
 					Line1:       "line1",
 					PostalCode:  "postalCode",
 					Region:      "region",
-					Line2:       rainhelloworld.String("line2"),
+					Line2:       rainsdk.String("line2"),
 				},
 				BirthDate:        time.Now(),
 				CountryOfIssue:   "xx",
@@ -65,26 +65,26 @@ func TestApplicationCompanyNewWithOptionalParams(t *testing.T) {
 				FirstName:        "firstName",
 				LastName:         "lastName",
 				NationalID:       "nationalId",
-				ID:               rainhelloworld.String("182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"),
-				PhoneCountryCode: rainhelloworld.String("1"),
-				PhoneNumber:      rainhelloworld.String("5555555555"),
+				ID:               rainsdk.String("182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"),
+				PhoneCountryCode: rainsdk.String("1"),
+				PhoneNumber:      rainsdk.String("5555555555"),
 			},
 			IPAddress:                "ipAddress",
 			IsTermsOfServiceAccepted: true,
-			Role:                     rainhelloworld.String("role"),
-			SolanaAddress:            rainhelloworld.String("WRktL2iKFTHZg6qNBPzV1b1WLYwfnZ5JSHo2UV8L1R"),
-			WalletAddress:            rainhelloworld.String("0xE1CB97d8EBbDbaAae6d9B1ca0D1cFaADcCcbdaDa"),
+			Role:                     rainsdk.String("role"),
+			SolanaAddress:            rainsdk.String("WRktL2iKFTHZg6qNBPzV1b1WLYwfnZ5JSHo2UV8L1R"),
+			WalletAddress:            rainsdk.String("0xE1CB97d8EBbDbaAae6d9B1ca0D1cFaADcCcbdaDa"),
 		},
 		Name: "name",
-		Representatives: []rainhelloworld.IssuingApplicationPersonParam{{
-			Address: rainhelloworld.PhysicalAddressParam{
+		Representatives: []rainsdk.IssuingApplicationPersonParam{{
+			Address: rainsdk.PhysicalAddressParam{
 				City:        "city",
 				Country:     "country",
 				CountryCode: "xx",
 				Line1:       "line1",
 				PostalCode:  "postalCode",
 				Region:      "region",
-				Line2:       rainhelloworld.String("line2"),
+				Line2:       rainsdk.String("line2"),
 			},
 			BirthDate:        time.Now(),
 			CountryOfIssue:   "xx",
@@ -92,19 +92,19 @@ func TestApplicationCompanyNewWithOptionalParams(t *testing.T) {
 			FirstName:        "firstName",
 			LastName:         "lastName",
 			NationalID:       "nationalId",
-			ID:               rainhelloworld.String("182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"),
-			PhoneCountryCode: rainhelloworld.String("1"),
-			PhoneNumber:      rainhelloworld.String("5555555555"),
+			ID:               rainsdk.String("182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"),
+			PhoneCountryCode: rainsdk.String("1"),
+			PhoneNumber:      rainsdk.String("5555555555"),
 		}},
-		UltimateBeneficialOwners: []rainhelloworld.IssuingApplicationPersonParam{{
-			Address: rainhelloworld.PhysicalAddressParam{
+		UltimateBeneficialOwners: []rainsdk.IssuingApplicationPersonParam{{
+			Address: rainsdk.PhysicalAddressParam{
 				City:        "city",
 				Country:     "country",
 				CountryCode: "xx",
 				Line1:       "line1",
 				PostalCode:  "postalCode",
 				Region:      "region",
-				Line2:       rainhelloworld.String("line2"),
+				Line2:       rainsdk.String("line2"),
 			},
 			BirthDate:        time.Now(),
 			CountryOfIssue:   "xx",
@@ -112,16 +112,16 @@ func TestApplicationCompanyNewWithOptionalParams(t *testing.T) {
 			FirstName:        "firstName",
 			LastName:         "lastName",
 			NationalID:       "nationalId",
-			ID:               rainhelloworld.String("182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"),
-			PhoneCountryCode: rainhelloworld.String("1"),
-			PhoneNumber:      rainhelloworld.String("5555555555"),
+			ID:               rainsdk.String("182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"),
+			PhoneCountryCode: rainsdk.String("1"),
+			PhoneNumber:      rainsdk.String("5555555555"),
 		}},
-		ChainID:         rainhelloworld.String("chainId"),
-		ContractAddress: rainhelloworld.String("0xE1CB97d8EBbDbaAae6d9B1ca0D1cFaADcCcbdaDa"),
-		SourceKey:       rainhelloworld.String("x"),
+		ChainID:         rainsdk.String("chainId"),
+		ContractAddress: rainsdk.String("0xE1CB97d8EBbDbaAae6d9B1ca0D1cFaADcCcbdaDa"),
+		SourceKey:       rainsdk.String("x"),
 	})
 	if err != nil {
-		var apierr *rainhelloworld.Error
+		var apierr *rainsdk.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -138,13 +138,13 @@ func TestApplicationCompanyGet(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := rainhelloworld.NewClient(
+	client := rainsdk.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithAPIKey("My API Key"),
 	)
 	_, err := client.Applications.Company.Get(context.TODO(), "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e")
 	if err != nil {
-		var apierr *rainhelloworld.Error
+		var apierr *rainsdk.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -161,36 +161,36 @@ func TestApplicationCompanyUpdateWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := rainhelloworld.NewClient(
+	client := rainsdk.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithAPIKey("My API Key"),
 	)
 	_, err := client.Applications.Company.Update(
 		context.TODO(),
 		"182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-		rainhelloworld.ApplicationCompanyUpdateParams{
-			Address: rainhelloworld.PhysicalAddressParam{
+		rainsdk.ApplicationCompanyUpdateParams{
+			Address: rainsdk.PhysicalAddressParam{
 				City:        "city",
 				Country:     "country",
 				CountryCode: "xx",
 				Line1:       "line1",
 				PostalCode:  "postalCode",
 				Region:      "region",
-				Line2:       rainhelloworld.String("line2"),
+				Line2:       rainsdk.String("line2"),
 			},
-			Entity: rainhelloworld.ApplicationCompanyUpdateParamsEntity{
-				Description:        rainhelloworld.String("description"),
-				ExpectedSpend:      rainhelloworld.String("expectedSpend"),
-				RegistrationNumber: rainhelloworld.String("registrationNumber"),
-				TaxID:              rainhelloworld.String("taxId"),
-				Type:               rainhelloworld.String("type"),
-				Website:            rainhelloworld.String("website"),
+			Entity: rainsdk.ApplicationCompanyUpdateParamsEntity{
+				Description:        rainsdk.String("description"),
+				ExpectedSpend:      rainsdk.String("expectedSpend"),
+				RegistrationNumber: rainsdk.String("registrationNumber"),
+				TaxID:              rainsdk.String("taxId"),
+				Type:               rainsdk.String("type"),
+				Website:            rainsdk.String("website"),
 			},
-			Name: rainhelloworld.String("name"),
+			Name: rainsdk.String("name"),
 		},
 	)
 	if err != nil {
-		var apierr *rainhelloworld.Error
+		var apierr *rainsdk.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -207,56 +207,56 @@ func TestApplicationCompanyReapplyWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := rainhelloworld.NewClient(
+	client := rainsdk.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithAPIKey("My API Key"),
 	)
 	_, err := client.Applications.Company.Reapply(
 		context.TODO(),
 		"182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-		rainhelloworld.ApplicationCompanyReapplyParams{
-			Address: rainhelloworld.PhysicalAddressParam{
+		rainsdk.ApplicationCompanyReapplyParams{
+			Address: rainsdk.PhysicalAddressParam{
 				City:        "city",
 				Country:     "country",
 				CountryCode: "xx",
 				Line1:       "line1",
 				PostalCode:  "postalCode",
 				Region:      "region",
-				Line2:       rainhelloworld.String("line2"),
+				Line2:       rainsdk.String("line2"),
 			},
-			Entity: rainhelloworld.ApplicationCompanyReapplyParamsEntity{
+			Entity: rainsdk.ApplicationCompanyReapplyParamsEntity{
 				Website:       "website",
-				Description:   rainhelloworld.String("description"),
-				ExpectedSpend: rainhelloworld.String("expectedSpend"),
-				Type:          rainhelloworld.String("type"),
+				Description:   rainsdk.String("description"),
+				ExpectedSpend: rainsdk.String("expectedSpend"),
+				Type:          rainsdk.String("type"),
 			},
-			InitialUser: rainhelloworld.ApplicationCompanyReapplyParamsInitialUser{
-				Address: rainhelloworld.PhysicalAddressParam{
+			InitialUser: rainsdk.ApplicationCompanyReapplyParamsInitialUser{
+				Address: rainsdk.PhysicalAddressParam{
 					City:        "city",
 					Country:     "country",
 					CountryCode: "xx",
 					Line1:       "line1",
 					PostalCode:  "postalCode",
 					Region:      "region",
-					Line2:       rainhelloworld.String("line2"),
+					Line2:       rainsdk.String("line2"),
 				},
 				BirthDate:                time.Now(),
 				CountryOfIssue:           "countryOfIssue",
 				IPAddress:                "ipAddress",
 				IsTermsOfServiceAccepted: true,
 				NationalID:               "nationalId",
-				Role:                     rainhelloworld.String("role"),
+				Role:                     rainsdk.String("role"),
 			},
 			Name: "name",
-			Representatives: []rainhelloworld.IssuingApplicationPersonParam{{
-				Address: rainhelloworld.PhysicalAddressParam{
+			Representatives: []rainsdk.IssuingApplicationPersonParam{{
+				Address: rainsdk.PhysicalAddressParam{
 					City:        "city",
 					Country:     "country",
 					CountryCode: "xx",
 					Line1:       "line1",
 					PostalCode:  "postalCode",
 					Region:      "region",
-					Line2:       rainhelloworld.String("line2"),
+					Line2:       rainsdk.String("line2"),
 				},
 				BirthDate:        time.Now(),
 				CountryOfIssue:   "xx",
@@ -264,19 +264,19 @@ func TestApplicationCompanyReapplyWithOptionalParams(t *testing.T) {
 				FirstName:        "firstName",
 				LastName:         "lastName",
 				NationalID:       "nationalId",
-				ID:               rainhelloworld.String("182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"),
-				PhoneCountryCode: rainhelloworld.String("1"),
-				PhoneNumber:      rainhelloworld.String("5555555555"),
+				ID:               rainsdk.String("182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"),
+				PhoneCountryCode: rainsdk.String("1"),
+				PhoneNumber:      rainsdk.String("5555555555"),
 			}},
-			UltimateBeneficialOwners: []rainhelloworld.IssuingApplicationPersonParam{{
-				Address: rainhelloworld.PhysicalAddressParam{
+			UltimateBeneficialOwners: []rainsdk.IssuingApplicationPersonParam{{
+				Address: rainsdk.PhysicalAddressParam{
 					City:        "city",
 					Country:     "country",
 					CountryCode: "xx",
 					Line1:       "line1",
 					PostalCode:  "postalCode",
 					Region:      "region",
-					Line2:       rainhelloworld.String("line2"),
+					Line2:       rainsdk.String("line2"),
 				},
 				BirthDate:        time.Now(),
 				CountryOfIssue:   "xx",
@@ -284,14 +284,14 @@ func TestApplicationCompanyReapplyWithOptionalParams(t *testing.T) {
 				FirstName:        "firstName",
 				LastName:         "lastName",
 				NationalID:       "nationalId",
-				ID:               rainhelloworld.String("182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"),
-				PhoneCountryCode: rainhelloworld.String("1"),
-				PhoneNumber:      rainhelloworld.String("5555555555"),
+				ID:               rainsdk.String("182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"),
+				PhoneCountryCode: rainsdk.String("1"),
+				PhoneNumber:      rainsdk.String("5555555555"),
 			}},
 		},
 	)
 	if err != nil {
-		var apierr *rainhelloworld.Error
+		var apierr *rainsdk.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -308,23 +308,23 @@ func TestApplicationCompanyUploadDocumentWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := rainhelloworld.NewClient(
+	client := rainsdk.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithAPIKey("My API Key"),
 	)
 	err := client.Applications.Company.UploadDocument(
 		context.TODO(),
 		"182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-		rainhelloworld.ApplicationCompanyUploadDocumentParams{
+		rainsdk.ApplicationCompanyUploadDocumentParams{
 			Document: io.Reader(bytes.NewBuffer([]byte("Example data"))),
-			Country:  rainhelloworld.String("xxx"),
-			Name:     rainhelloworld.String("name"),
-			Side:     rainhelloworld.ApplicationCompanyUploadDocumentParamsSideFront,
-			Type:     rainhelloworld.ApplicationCompanyUploadDocumentParamsTypeDirectorsRegistry,
+			Country:  rainsdk.String("xxx"),
+			Name:     rainsdk.String("name"),
+			Side:     rainsdk.ApplicationCompanyUploadDocumentParamsSideFront,
+			Type:     rainsdk.ApplicationCompanyUploadDocumentParamsTypeDirectorsRegistry,
 		},
 	)
 	if err != nil {
-		var apierr *rainhelloworld.Error
+		var apierr *rainsdk.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}

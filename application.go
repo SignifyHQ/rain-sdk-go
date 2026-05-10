@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package rainhelloworld
+package rainsdk
 
 import (
 	"github.com/SignifyHQ/rain-sdk-go/option"

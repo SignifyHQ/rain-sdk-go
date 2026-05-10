@@ -1,4 +1,4 @@
-package rainhelloworld
+package rainsdk
 
 import (
 	"github.com/SignifyHQ/rain-sdk-go/packages/param"

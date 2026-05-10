@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package rainhelloworld_test
+package rainsdk_test
 
 import (
 	"context"
@@ -22,13 +22,13 @@ func TestCardGet(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := rainhelloworld.NewClient(
+	client := rainsdk.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithAPIKey("My API Key"),
 	)
 	_, err := client.Cards.Get(context.TODO(), "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e")
 	if err != nil {
-		var apierr *rainhelloworld.Error
+		var apierr *rainsdk.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -45,35 +45,35 @@ func TestCardUpdateWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := rainhelloworld.NewClient(
+	client := rainsdk.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithAPIKey("My API Key"),
 	)
 	_, err := client.Cards.Update(
 		context.TODO(),
 		"182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-		rainhelloworld.CardUpdateParams{
-			Billing: rainhelloworld.PhysicalAddressParam{
+		rainsdk.CardUpdateParams{
+			Billing: rainsdk.PhysicalAddressParam{
 				City:        "city",
 				Country:     "country",
 				CountryCode: "xx",
 				Line1:       "line1",
 				PostalCode:  "postalCode",
 				Region:      "region",
-				Line2:       rainhelloworld.String("line2"),
+				Line2:       rainsdk.String("line2"),
 			},
-			Configuration: rainhelloworld.CardUpdateParamsConfiguration{
-				VirtualCardArt: rainhelloworld.String("virtualCardArt"),
+			Configuration: rainsdk.CardUpdateParamsConfiguration{
+				VirtualCardArt: rainsdk.String("virtualCardArt"),
 			},
-			Limit: rainhelloworld.IssuingCardLimitParam{
+			Limit: rainsdk.IssuingCardLimitParam{
 				Amount:    0,
-				Frequency: rainhelloworld.IssuingCardLimitFrequencyPer24HourPeriod,
+				Frequency: rainsdk.IssuingCardLimitFrequencyPer24HourPeriod,
 			},
-			Status: rainhelloworld.IssuingCardStatusNotActivated,
+			Status: rainsdk.IssuingCardStatusNotActivated,
 		},
 	)
 	if err != nil {
-		var apierr *rainhelloworld.Error
+		var apierr *rainsdk.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -90,19 +90,19 @@ func TestCardListWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := rainhelloworld.NewClient(
+	client := rainsdk.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithAPIKey("My API Key"),
 	)
-	_, err := client.Cards.List(context.TODO(), rainhelloworld.CardListParams{
-		CompanyID: rainhelloworld.String("182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"),
-		Cursor:    rainhelloworld.String("cursor"),
-		Limit:     rainhelloworld.Int(1),
-		Status:    rainhelloworld.IssuingCardStatusNotActivated,
-		UserID:    rainhelloworld.String("182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"),
+	_, err := client.Cards.List(context.TODO(), rainsdk.CardListParams{
+		CompanyID: rainsdk.String("182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"),
+		Cursor:    rainsdk.String("cursor"),
+		Limit:     rainsdk.Int(1),
+		Status:    rainsdk.IssuingCardStatusNotActivated,
+		UserID:    rainsdk.String("182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"),
 	})
 	if err != nil {
-		var apierr *rainhelloworld.Error
+		var apierr *rainsdk.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -119,19 +119,19 @@ func TestCardGetSecrets(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := rainhelloworld.NewClient(
+	client := rainsdk.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithAPIKey("My API Key"),
 	)
 	_, err := client.Cards.GetSecrets(
 		context.TODO(),
 		"182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-		rainhelloworld.CardGetSecretsParams{
+		rainsdk.CardGetSecretsParams{
 			SessionID: "x",
 		},
 	)
 	if err != nil {
-		var apierr *rainhelloworld.Error
+		var apierr *rainsdk.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}

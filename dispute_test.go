@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package rainhelloworld_test
+package rainsdk_test
 
 import (
 	"context"
@@ -22,13 +22,13 @@ func TestDisputeGet(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := rainhelloworld.NewClient(
+	client := rainsdk.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithAPIKey("My API Key"),
 	)
 	_, err := client.Disputes.Get(context.TODO(), "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e")
 	if err != nil {
-		var apierr *rainhelloworld.Error
+		var apierr *rainsdk.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -45,20 +45,20 @@ func TestDisputeUpdateWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := rainhelloworld.NewClient(
+	client := rainsdk.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithAPIKey("My API Key"),
 	)
 	err := client.Disputes.Update(
 		context.TODO(),
 		"182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-		rainhelloworld.DisputeUpdateParams{
-			Status:       rainhelloworld.DisputeUpdateParamsStatusCanceled,
-			TextEvidence: rainhelloworld.String("textEvidence"),
+		rainsdk.DisputeUpdateParams{
+			Status:       rainsdk.DisputeUpdateParamsStatusCanceled,
+			TextEvidence: rainsdk.String("textEvidence"),
 		},
 	)
 	if err != nil {
-		var apierr *rainhelloworld.Error
+		var apierr *rainsdk.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -75,19 +75,19 @@ func TestDisputeListWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := rainhelloworld.NewClient(
+	client := rainsdk.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithAPIKey("My API Key"),
 	)
-	_, err := client.Disputes.List(context.TODO(), rainhelloworld.DisputeListParams{
-		CompanyID:     rainhelloworld.String("182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"),
-		Cursor:        rainhelloworld.String("cursor"),
-		Limit:         rainhelloworld.Int(1),
-		TransactionID: rainhelloworld.String("182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"),
-		UserID:        rainhelloworld.String("182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"),
+	_, err := client.Disputes.List(context.TODO(), rainsdk.DisputeListParams{
+		CompanyID:     rainsdk.String("182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"),
+		Cursor:        rainsdk.String("cursor"),
+		Limit:         rainsdk.Int(1),
+		TransactionID: rainsdk.String("182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"),
+		UserID:        rainsdk.String("182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"),
 	})
 	if err != nil {
-		var apierr *rainhelloworld.Error
+		var apierr *rainsdk.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}

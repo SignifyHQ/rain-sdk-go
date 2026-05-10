@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package rainhelloworld_test
+package rainsdk_test
 
 import (
 	"context"
@@ -21,15 +21,15 @@ func TestUsage(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := rainhelloworld.NewClient(
+	client := rainsdk.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithAPIKey("My API Key"),
 	)
 	issuingChargeCreateResponse, err := client.Companies.Charge(
 		context.TODO(),
 		"182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-		rainhelloworld.CompanyChargeParams{
-			IssuingChargeCreateBody: rainhelloworld.IssuingChargeCreateBodyParam{
+		rainsdk.CompanyChargeParams{
+			IssuingChargeCreateBody: rainsdk.IssuingChargeCreateBodyParam{
 				Amount:      1,
 				Description: "description",
 			},
