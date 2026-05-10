@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package rainhelloworld_test
+package rainsdk_test
 
 import (
 	"context"
@@ -22,23 +22,23 @@ func TestCompanySignatureGetPaymentSignatureWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := rainhelloworld.NewClient(
+	client := rainsdk.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithAPIKey("My API Key"),
 	)
 	_, err := client.Companies.Signatures.GetPaymentSignature(
 		context.TODO(),
 		"182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-		rainhelloworld.CompanySignatureGetPaymentSignatureParams{
+		rainsdk.CompanySignatureGetPaymentSignatureParams{
 			Token:          "token",
 			AdminAddress:   "adminAddress",
 			Amount:         "amount",
-			ChainID:        rainhelloworld.Int(0),
-			IsAmountNative: rainhelloworld.Bool(true),
+			ChainID:        rainsdk.Int(0),
+			IsAmountNative: rainsdk.Bool(true),
 		},
 	)
 	if err != nil {
-		var apierr *rainhelloworld.Error
+		var apierr *rainsdk.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -55,24 +55,24 @@ func TestCompanySignatureGetWithdrawalSignatureWithOptionalParams(t *testing.T) 
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := rainhelloworld.NewClient(
+	client := rainsdk.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithAPIKey("My API Key"),
 	)
 	_, err := client.Companies.Signatures.GetWithdrawalSignature(
 		context.TODO(),
 		"182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-		rainhelloworld.CompanySignatureGetWithdrawalSignatureParams{
+		rainsdk.CompanySignatureGetWithdrawalSignatureParams{
 			Token:            "token",
 			AdminAddress:     "adminAddress",
 			Amount:           "amount",
 			RecipientAddress: "recipientAddress",
-			ChainID:          rainhelloworld.Int(0),
-			IsAmountNative:   rainhelloworld.Bool(true),
+			ChainID:          rainsdk.Int(0),
+			IsAmountNative:   rainsdk.Bool(true),
 		},
 	)
 	if err != nil {
-		var apierr *rainhelloworld.Error
+		var apierr *rainsdk.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}

@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package rainhelloworld
+package rainsdk
 
 import (
 	"context"
@@ -137,10 +137,10 @@ func (IssuingTransactionFee) implIssuingTransactionUnion()        {}
 // Use the following switch statement to find the correct variant
 //
 //	switch variant := IssuingTransactionUnion.AsAny().(type) {
-//	case rainhelloworld.IssuingTransactionSpend:
-//	case rainhelloworld.IssuingTransactionCollateral:
-//	case rainhelloworld.IssuingTransactionPayment:
-//	case rainhelloworld.IssuingTransactionFee:
+//	case rainsdk.IssuingTransactionSpend:
+//	case rainsdk.IssuingTransactionCollateral:
+//	case rainsdk.IssuingTransactionPayment:
+//	case rainsdk.IssuingTransactionFee:
 //	default:
 //	  fmt.Errorf("no variant present")
 //	}

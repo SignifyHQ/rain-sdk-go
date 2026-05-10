@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package rainhelloworld_test
+package rainsdk_test
 
 import (
 	"context"
@@ -23,13 +23,13 @@ func TestCompanyGet(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := rainhelloworld.NewClient(
+	client := rainsdk.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithAPIKey("My API Key"),
 	)
 	_, err := client.Companies.Get(context.TODO(), "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e")
 	if err != nil {
-		var apierr *rainhelloworld.Error
+		var apierr *rainsdk.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -46,28 +46,28 @@ func TestCompanyUpdateWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := rainhelloworld.NewClient(
+	client := rainsdk.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithAPIKey("My API Key"),
 	)
 	_, err := client.Companies.Update(
 		context.TODO(),
 		"182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-		rainhelloworld.CompanyUpdateParams{
-			Address: rainhelloworld.PhysicalAddressParam{
+		rainsdk.CompanyUpdateParams{
+			Address: rainsdk.PhysicalAddressParam{
 				City:        "city",
 				Country:     "country",
 				CountryCode: "xx",
 				Line1:       "line1",
 				PostalCode:  "postalCode",
 				Region:      "region",
-				Line2:       rainhelloworld.String("line2"),
+				Line2:       rainsdk.String("line2"),
 			},
-			Name: rainhelloworld.String("name"),
+			Name: rainsdk.String("name"),
 		},
 	)
 	if err != nil {
-		var apierr *rainhelloworld.Error
+		var apierr *rainsdk.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -84,16 +84,16 @@ func TestCompanyListWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := rainhelloworld.NewClient(
+	client := rainsdk.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithAPIKey("My API Key"),
 	)
-	_, err := client.Companies.List(context.TODO(), rainhelloworld.CompanyListParams{
-		Cursor: rainhelloworld.String("cursor"),
-		Limit:  rainhelloworld.Int(1),
+	_, err := client.Companies.List(context.TODO(), rainsdk.CompanyListParams{
+		Cursor: rainsdk.String("cursor"),
+		Limit:  rainsdk.Int(1),
 	})
 	if err != nil {
-		var apierr *rainhelloworld.Error
+		var apierr *rainsdk.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -110,22 +110,22 @@ func TestCompanyCharge(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := rainhelloworld.NewClient(
+	client := rainsdk.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithAPIKey("My API Key"),
 	)
 	_, err := client.Companies.Charge(
 		context.TODO(),
 		"182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-		rainhelloworld.CompanyChargeParams{
-			IssuingChargeCreateBody: rainhelloworld.IssuingChargeCreateBodyParam{
+		rainsdk.CompanyChargeParams{
+			IssuingChargeCreateBody: rainsdk.IssuingChargeCreateBodyParam{
 				Amount:      1,
 				Description: "description",
 			},
 		},
 	)
 	if err != nil {
-		var apierr *rainhelloworld.Error
+		var apierr *rainsdk.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -142,35 +142,35 @@ func TestCompanyNewUserWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := rainhelloworld.NewClient(
+	client := rainsdk.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithAPIKey("My API Key"),
 	)
 	_, err := client.Companies.NewUser(
 		context.TODO(),
 		"182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-		rainhelloworld.CompanyNewUserParams{
+		rainsdk.CompanyNewUserParams{
 			Email:                    "email",
 			FirstName:                "firstName",
 			IsTermsOfServiceAccepted: true,
 			LastName:                 "lastName",
-			Address: rainhelloworld.PhysicalAddressParam{
+			Address: rainsdk.PhysicalAddressParam{
 				City:        "city",
 				Country:     "country",
 				CountryCode: "xx",
 				Line1:       "line1",
 				PostalCode:  "postalCode",
 				Region:      "region",
-				Line2:       rainhelloworld.String("line2"),
+				Line2:       rainsdk.String("line2"),
 			},
-			BirthDate:        rainhelloworld.Time(time.Now()),
-			PhoneCountryCode: rainhelloworld.String("phoneCountryCode"),
-			PhoneNumber:      rainhelloworld.String("phoneNumber"),
-			WalletAddress:    rainhelloworld.String("0xE1CB97d8EBbDbaAae6d9B1ca0D1cFaADcCcbdaDa"),
+			BirthDate:        rainsdk.Time(time.Now()),
+			PhoneCountryCode: rainsdk.String("phoneCountryCode"),
+			PhoneNumber:      rainsdk.String("phoneNumber"),
+			WalletAddress:    rainsdk.String("0xE1CB97d8EBbDbaAae6d9B1ca0D1cFaADcCcbdaDa"),
 		},
 	)
 	if err != nil {
-		var apierr *rainhelloworld.Error
+		var apierr *rainsdk.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -187,21 +187,21 @@ func TestCompanyInitiatePaymentWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := rainhelloworld.NewClient(
+	client := rainsdk.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithAPIKey("My API Key"),
 	)
 	_, err := client.Companies.InitiatePayment(
 		context.TODO(),
 		"182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-		rainhelloworld.CompanyInitiatePaymentParams{
+		rainsdk.CompanyInitiatePaymentParams{
 			Amount:        0,
 			WalletAddress: "0xE1CB97d8EBbDbaAae6d9B1ca0D1cFaADcCcbdaDa",
-			ChainID:       rainhelloworld.Int(0),
+			ChainID:       rainsdk.Int(0),
 		},
 	)
 	if err != nil {
-		var apierr *rainhelloworld.Error
+		var apierr *rainsdk.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -218,13 +218,13 @@ func TestCompanyGetBalances(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := rainhelloworld.NewClient(
+	client := rainsdk.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithAPIKey("My API Key"),
 	)
 	_, err := client.Companies.GetBalances(context.TODO(), "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e")
 	if err != nil {
-		var apierr *rainhelloworld.Error
+		var apierr *rainsdk.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -241,13 +241,13 @@ func TestCompanyGetContracts(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := rainhelloworld.NewClient(
+	client := rainsdk.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithAPIKey("My API Key"),
 	)
 	_, err := client.Companies.GetContracts(context.TODO(), "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e")
 	if err != nil {
-		var apierr *rainhelloworld.Error
+		var apierr *rainsdk.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}

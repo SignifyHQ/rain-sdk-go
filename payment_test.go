@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package rainhelloworld_test
+package rainsdk_test
 
 import (
 	"context"
@@ -22,17 +22,17 @@ func TestPaymentInitiateWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := rainhelloworld.NewClient(
+	client := rainsdk.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithAPIKey("My API Key"),
 	)
-	_, err := client.Payments.Initiate(context.TODO(), rainhelloworld.PaymentInitiateParams{
+	_, err := client.Payments.Initiate(context.TODO(), rainsdk.PaymentInitiateParams{
 		Amount:        0,
 		WalletAddress: "0xE1CB97d8EBbDbaAae6d9B1ca0D1cFaADcCcbdaDa",
-		ChainID:       rainhelloworld.Int(0),
+		ChainID:       rainsdk.Int(0),
 	})
 	if err != nil {
-		var apierr *rainhelloworld.Error
+		var apierr *rainsdk.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
