@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.1.1 (2026-05-10)
+
+Full Changelog: [v0.1.0...v0.1.1](https://github.com/SignifyHQ/rain-sdk-go/compare/v0.1.0...v0.1.1)
+
+### Bug Fixes
+
+* **go:** avoid panic when http.DefaultTransport is wrapped ([05b7efb](https://github.com/SignifyHQ/rain-sdk-go/commit/05b7efbf2b1c6f7419ebc2eea7fc9462ffc10fa1))
+* update go package name ([9aa327a](https://github.com/SignifyHQ/rain-sdk-go/commit/9aa327a2e7687a4a93b963b7957d18b9152fa028))
+
+
+### Chores
+
+* redact api-key headers in debug logs ([394a386](https://github.com/SignifyHQ/rain-sdk-go/commit/394a386222f17b942247be2e00c92722a95116d9))
+
 ## 0.1.0 (2026-04-30)
 
 Full Changelog: [v0.0.2...v0.1.0](https://github.com/SignifyHQ/rain-sdk-go/compare/v0.0.2...v0.1.0)
