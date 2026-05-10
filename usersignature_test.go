@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package rainhelloworld_test
+package rainsdk_test
 
 import (
 	"context"
@@ -22,22 +22,22 @@ func TestUserSignatureGetPaymentSignatureWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := rainhelloworld.NewClient(
+	client := rainsdk.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithAPIKey("My API Key"),
 	)
 	_, err := client.Users.Signatures.GetPaymentSignature(
 		context.TODO(),
 		"182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-		rainhelloworld.UserSignatureGetPaymentSignatureParams{
+		rainsdk.UserSignatureGetPaymentSignatureParams{
 			Token:        "token",
 			AdminAddress: "adminAddress",
 			Amount:       "amount",
-			ChainID:      rainhelloworld.Int(0),
+			ChainID:      rainsdk.Int(0),
 		},
 	)
 	if err != nil {
-		var apierr *rainhelloworld.Error
+		var apierr *rainsdk.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -54,23 +54,23 @@ func TestUserSignatureGetWithdrawalSignatureWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := rainhelloworld.NewClient(
+	client := rainsdk.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithAPIKey("My API Key"),
 	)
 	_, err := client.Users.Signatures.GetWithdrawalSignature(
 		context.TODO(),
 		"182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-		rainhelloworld.UserSignatureGetWithdrawalSignatureParams{
+		rainsdk.UserSignatureGetWithdrawalSignatureParams{
 			Token:            "token",
 			AdminAddress:     "adminAddress",
 			Amount:           "amount",
 			RecipientAddress: "recipientAddress",
-			ChainID:          rainhelloworld.Int(0),
+			ChainID:          rainsdk.Int(0),
 		},
 	)
 	if err != nil {
-		var apierr *rainhelloworld.Error
+		var apierr *rainsdk.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}

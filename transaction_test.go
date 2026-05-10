@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package rainhelloworld_test
+package rainsdk_test
 
 import (
 	"context"
@@ -23,13 +23,13 @@ func TestTransactionGet(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := rainhelloworld.NewClient(
+	client := rainsdk.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithAPIKey("My API Key"),
 	)
 	_, err := client.Transactions.Get(context.TODO(), "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e")
 	if err != nil {
-		var apierr *rainhelloworld.Error
+		var apierr *rainsdk.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -46,19 +46,19 @@ func TestTransactionUpdateWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := rainhelloworld.NewClient(
+	client := rainsdk.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithAPIKey("My API Key"),
 	)
 	err := client.Transactions.Update(
 		context.TODO(),
 		"182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-		rainhelloworld.TransactionUpdateParams{
-			Memo: rainhelloworld.String("memo"),
+		rainsdk.TransactionUpdateParams{
+			Memo: rainsdk.String("memo"),
 		},
 	)
 	if err != nil {
-		var apierr *rainhelloworld.Error
+		var apierr *rainsdk.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -75,25 +75,25 @@ func TestTransactionListWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := rainhelloworld.NewClient(
+	client := rainsdk.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithAPIKey("My API Key"),
 	)
-	_, err := client.Transactions.List(context.TODO(), rainhelloworld.TransactionListParams{
-		AuthorizedAfter:  rainhelloworld.Time(time.Now()),
-		AuthorizedBefore: rainhelloworld.Time(time.Now()),
-		CardID:           rainhelloworld.String("182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"),
-		CompanyID:        rainhelloworld.String("182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"),
-		Cursor:           rainhelloworld.String("cursor"),
-		Limit:            rainhelloworld.Int(1),
-		PostedAfter:      rainhelloworld.Time(time.Now()),
-		PostedBefore:     rainhelloworld.Time(time.Now()),
-		TransactionHash:  rainhelloworld.String("transactionHash"),
+	_, err := client.Transactions.List(context.TODO(), rainsdk.TransactionListParams{
+		AuthorizedAfter:  rainsdk.Time(time.Now()),
+		AuthorizedBefore: rainsdk.Time(time.Now()),
+		CardID:           rainsdk.String("182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"),
+		CompanyID:        rainsdk.String("182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"),
+		Cursor:           rainsdk.String("cursor"),
+		Limit:            rainsdk.Int(1),
+		PostedAfter:      rainsdk.Time(time.Now()),
+		PostedBefore:     rainsdk.Time(time.Now()),
+		TransactionHash:  rainsdk.String("transactionHash"),
 		Type:             []string{"spend"},
-		UserID:           rainhelloworld.String("182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"),
+		UserID:           rainsdk.String("182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"),
 	})
 	if err != nil {
-		var apierr *rainhelloworld.Error
+		var apierr *rainsdk.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -110,19 +110,19 @@ func TestTransactionNewDisputeWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := rainhelloworld.NewClient(
+	client := rainsdk.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithAPIKey("My API Key"),
 	)
 	_, err := client.Transactions.NewDispute(
 		context.TODO(),
 		"182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-		rainhelloworld.TransactionNewDisputeParams{
-			TextEvidence: rainhelloworld.String("textEvidence"),
+		rainsdk.TransactionNewDisputeParams{
+			TextEvidence: rainsdk.String("textEvidence"),
 		},
 	)
 	if err != nil {
-		var apierr *rainhelloworld.Error
+		var apierr *rainsdk.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}

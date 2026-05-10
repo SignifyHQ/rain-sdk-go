@@ -17,7 +17,7 @@ It is generated with [Stainless](https://www.stainless.com/).
 
 ```go
 import (
-	"github.com/SignifyHQ/rain-sdk-go" // imported as rainhelloworld
+	"github.com/SignifyHQ/rain-sdk-go" // imported as rainsdk
 )
 ```
 
@@ -53,15 +53,15 @@ import (
 )
 
 func main() {
-	client := rainhelloworld.NewClient(
+	client := rainsdk.NewClient(
 		option.WithAPIKey("My API Key"),    // defaults to os.LookupEnv("RAIN_API_KEY")
 		option.WithEnvironmentProduction(), // defaults to option.WithEnvironmentDev()
 	)
 	issuingChargeCreateResponse, err := client.Companies.Charge(
 		context.TODO(),
 		"182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-		rainhelloworld.CompanyChargeParams{
-			IssuingChargeCreateBody: rainhelloworld.IssuingChargeCreateBodyParam{
+		rainsdk.CompanyChargeParams{
+			IssuingChargeCreateBody: rainsdk.IssuingChargeCreateBodyParam{
 				Amount:      1,
 				Description: "description",
 			},
@@ -77,13 +77,13 @@ func main() {
 
 ### Request fields
 
-The rainhelloworld library uses the [`omitzero`](https://tip.golang.org/doc/go1.24#encodingjsonpkgencodingjson)
+The rainsdk library uses the [`omitzero`](https://tip.golang.org/doc/go1.24#encodingjsonpkgencodingjson)
 semantics from the Go 1.24+ `encoding/json` release for request fields.
 
 Required primitive fields (`int64`, `string`, etc.) feature the tag <code>\`api:"required"\`</code>. These
 fields are always serialized, even their zero values.
 
-Optional primitive types are wrapped in a `param.Opt[T]`. These fields can be set with the provided constructors, `rainhelloworld.String(string)`, `rainhelloworld.Int(int64)`, etc.
+Optional primitive types are wrapped in a `param.Opt[T]`. These fields can be set with the provided constructors, `rainsdk.String(string)`, `rainsdk.Int(int64)`, etc.
 
 Any `param.Opt[T]`, map, slice, struct or string enum uses the
 tag <code>\`json:"...,omitzero"\`</code>. Its zero value is considered omitted.
@@ -91,17 +91,17 @@ tag <code>\`json:"...,omitzero"\`</code>. Its zero value is considered omitted.
 The `param.IsOmitted(any)` function can confirm the presence of any `omitzero` field.
 
 ```go
-p := rainhelloworld.ExampleParams{
-	ID:   "id_xxx",                     // required property
-	Name: rainhelloworld.String("..."), // optional property
+p := rainsdk.ExampleParams{
+	ID:   "id_xxx",              // required property
+	Name: rainsdk.String("..."), // optional property
 
-	Point: rainhelloworld.Point{
-		X: 0,                     // required field will serialize as 0
-		Y: rainhelloworld.Int(1), // optional field will serialize as 1
+	Point: rainsdk.Point{
+		X: 0,              // required field will serialize as 0
+		Y: rainsdk.Int(1), // optional field will serialize as 1
 		// ... omitted non-required fields will not be serialized
 	},
 
-	Origin: rainhelloworld.Origin{}, // the zero value of [Origin] is considered omitted
+	Origin: rainsdk.Origin{}, // the zero value of [Origin] is considered omitted
 }
 ```
 
@@ -130,7 +130,7 @@ p.SetExtraFields(map[string]any{
 })
 
 // Send a number instead of an object
-custom := param.Override[rainhelloworld.FooParams](12)
+custom := param.Override[rainsdk.FooParams](12)
 ```
 
 ### Request unions
@@ -271,7 +271,7 @@ This library uses the functional options pattern. Functions defined in the
 requests. For example:
 
 ```go
-client := rainhelloworld.NewClient(
+client := rainsdk.NewClient(
 	// Adds a header to every request made by the client
 	option.WithHeader("X-Some-Header", "custom_header_info"),
 )
@@ -300,7 +300,7 @@ with additional helper methods like `.GetNextPage()`, e.g.:
 ### Errors
 
 When the API returns a non-success status code, we return an error with type
-`*rainhelloworld.Error`. This contains the `StatusCode`, `*http.Request`, and
+`*rainsdk.Error`. This contains the `StatusCode`, `*http.Request`, and
 `*http.Response` values of the request, as well as the JSON of the error body
 (much like other response objects in the SDK).
 
@@ -310,15 +310,15 @@ To handle errors, we recommend that you use the `errors.As` pattern:
 _, err := client.Companies.Charge(
 	context.TODO(),
 	"182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-	rainhelloworld.CompanyChargeParams{
-		IssuingChargeCreateBody: rainhelloworld.IssuingChargeCreateBodyParam{
+	rainsdk.CompanyChargeParams{
+		IssuingChargeCreateBody: rainsdk.IssuingChargeCreateBodyParam{
 			Amount:      1,
 			Description: "description",
 		},
 	},
 )
 if err != nil {
-	var apierr *rainhelloworld.Error
+	var apierr *rainsdk.Error
 	if errors.As(err, &apierr) {
 		println(string(apierr.DumpRequest(true)))  // Prints the serialized HTTP request
 		println(string(apierr.DumpResponse(true))) // Prints the serialized HTTP response
@@ -344,8 +344,8 @@ defer cancel()
 client.Companies.Charge(
 	ctx,
 	"182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-	rainhelloworld.CompanyChargeParams{
-		IssuingChargeCreateBody: rainhelloworld.IssuingChargeCreateBodyParam{
+	rainsdk.CompanyChargeParams{
+		IssuingChargeCreateBody: rainsdk.IssuingChargeCreateBodyParam{
 			Amount:      1,
 			Description: "description",
 		},
@@ -365,24 +365,24 @@ The file name and content-type can be customized by implementing `Name() string`
 string` on the run-time type of `io.Reader`. Note that `os.File` implements `Name() string`, so a
 file returned by `os.Open` will be sent with the file name on disk.
 
-We also provide a helper `rainhelloworld.File(reader io.Reader, filename string, contentType string)`
+We also provide a helper `rainsdk.File(reader io.Reader, filename string, contentType string)`
 which can be used to wrap any `io.Reader` with the appropriate file name and content type.
 
 ```go
 // A file from the file system
 file, err := os.Open("/path/to/file")
-rainhelloworld.ApplicationCompanyUploadDocumentParams{
+rainsdk.ApplicationCompanyUploadDocumentParams{
 	Document: file,
 }
 
 // A file from a string
-rainhelloworld.ApplicationCompanyUploadDocumentParams{
+rainsdk.ApplicationCompanyUploadDocumentParams{
 	Document: strings.NewReader("my file contents"),
 }
 
 // With a custom filename and contentType
-rainhelloworld.ApplicationCompanyUploadDocumentParams{
-	Document: rainhelloworld.File(strings.NewReader(`{"hello": "foo"}`), "file.go", "application/json"),
+rainsdk.ApplicationCompanyUploadDocumentParams{
+	Document: rainsdk.File(strings.NewReader(`{"hello": "foo"}`), "file.go", "application/json"),
 }
 ```
 
@@ -396,7 +396,7 @@ You can use the `WithMaxRetries` option to configure or disable this:
 
 ```go
 // Configure the default for all requests:
-client := rainhelloworld.NewClient(
+client := rainsdk.NewClient(
 	option.WithMaxRetries(0), // default is 2
 )
 
@@ -404,8 +404,8 @@ client := rainhelloworld.NewClient(
 client.Companies.Charge(
 	context.TODO(),
 	"182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-	rainhelloworld.CompanyChargeParams{
-		IssuingChargeCreateBody: rainhelloworld.IssuingChargeCreateBodyParam{
+	rainsdk.CompanyChargeParams{
+		IssuingChargeCreateBody: rainsdk.IssuingChargeCreateBodyParam{
 			Amount:      1,
 			Description: "description",
 		},
@@ -425,8 +425,8 @@ var response *http.Response
 issuingChargeCreateResponse, err := client.Companies.Charge(
 	context.TODO(),
 	"182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-	rainhelloworld.CompanyChargeParams{
-		IssuingChargeCreateBody: rainhelloworld.IssuingChargeCreateBodyParam{
+	rainsdk.CompanyChargeParams{
+		IssuingChargeCreateBody: rainsdk.IssuingChargeCreateBodyParam{
 			Amount:      1,
 			Description: "description",
 		},
@@ -477,7 +477,7 @@ or the `option.WithJSONSet()` methods.
 params := FooNewParams{
     ID:   "id_xxxx",
     Data: FooNewParamsData{
-        FirstName: rainhelloworld.String("John"),
+        FirstName: rainsdk.String("John"),
     },
 }
 client.Foo.New(context.Background(), params, option.WithJSONSet("data.last_name", "Doe"))
@@ -512,7 +512,7 @@ func Logger(req *http.Request, next option.MiddlewareNext) (res *http.Response, 
     return res, err
 }
 
-client := rainhelloworld.NewClient(
+client := rainsdk.NewClient(
 	option.WithMiddleware(Logger),
 )
 ```

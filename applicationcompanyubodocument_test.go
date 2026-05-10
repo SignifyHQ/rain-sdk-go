@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package rainhelloworld_test
+package rainsdk_test
 
 import (
 	"bytes"
@@ -24,23 +24,23 @@ func TestApplicationCompanyUboDocumentUploadWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := rainhelloworld.NewClient(
+	client := rainsdk.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithAPIKey("My API Key"),
 	)
 	err := client.Applications.Company.Ubo.Document.Upload(
 		context.TODO(),
 		"182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-		rainhelloworld.ApplicationCompanyUboDocumentUploadParams{
+		rainsdk.ApplicationCompanyUboDocumentUploadParams{
 			CompanyID: "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
 			Document:  io.Reader(bytes.NewBuffer([]byte("Example data"))),
-			Country:   rainhelloworld.String("xxx"),
-			Side:      rainhelloworld.ApplicationCompanyUboDocumentUploadParamsSideFront,
-			Type:      rainhelloworld.ApplicationCompanyUboDocumentUploadParamsTypeIDCard,
+			Country:   rainsdk.String("xxx"),
+			Side:      rainsdk.ApplicationCompanyUboDocumentUploadParamsSideFront,
+			Type:      rainsdk.ApplicationCompanyUboDocumentUploadParamsTypeIDCard,
 		},
 	)
 	if err != nil {
-		var apierr *rainhelloworld.Error
+		var apierr *rainsdk.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}

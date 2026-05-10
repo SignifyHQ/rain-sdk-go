@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package rainhelloworld_test
+package rainsdk_test
 
 import (
 	"bytes"
@@ -25,34 +25,34 @@ func TestApplicationCompanyUboUpdateWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := rainhelloworld.NewClient(
+	client := rainsdk.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithAPIKey("My API Key"),
 	)
 	_, err := client.Applications.Company.Ubo.Update(
 		context.TODO(),
 		"182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-		rainhelloworld.ApplicationCompanyUboUpdateParams{
+		rainsdk.ApplicationCompanyUboUpdateParams{
 			CompanyID: "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-			Address: rainhelloworld.PhysicalAddressParam{
+			Address: rainsdk.PhysicalAddressParam{
 				City:        "city",
 				Country:     "country",
 				CountryCode: "xx",
 				Line1:       "line1",
 				PostalCode:  "postalCode",
 				Region:      "region",
-				Line2:       rainhelloworld.String("line2"),
+				Line2:       rainsdk.String("line2"),
 			},
-			BirthDate:      rainhelloworld.Time(time.Now()),
-			CountryOfIssue: rainhelloworld.String("countryOfIssue"),
-			Email:          rainhelloworld.String("dev@stainless.com"),
-			FirstName:      rainhelloworld.String("firstName"),
-			LastName:       rainhelloworld.String("lastName"),
-			NationalID:     rainhelloworld.String("nationalId"),
+			BirthDate:      rainsdk.Time(time.Now()),
+			CountryOfIssue: rainsdk.String("countryOfIssue"),
+			Email:          rainsdk.String("dev@stainless.com"),
+			FirstName:      rainsdk.String("firstName"),
+			LastName:       rainsdk.String("lastName"),
+			NationalID:     rainsdk.String("nationalId"),
 		},
 	)
 	if err != nil {
-		var apierr *rainhelloworld.Error
+		var apierr *rainsdk.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -69,23 +69,23 @@ func TestApplicationCompanyUboUploadDocumentWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := rainhelloworld.NewClient(
+	client := rainsdk.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithAPIKey("My API Key"),
 	)
 	err := client.Applications.Company.Ubo.UploadDocument(
 		context.TODO(),
 		"182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-		rainhelloworld.ApplicationCompanyUboUploadDocumentParams{
+		rainsdk.ApplicationCompanyUboUploadDocumentParams{
 			Document: io.Reader(bytes.NewBuffer([]byte("Example data"))),
 			Email:    "email",
-			Country:  rainhelloworld.String("xxx"),
-			Side:     rainhelloworld.ApplicationCompanyUboUploadDocumentParamsSideFront,
-			Type:     rainhelloworld.ApplicationCompanyUboUploadDocumentParamsTypeIDCard,
+			Country:  rainsdk.String("xxx"),
+			Side:     rainsdk.ApplicationCompanyUboUploadDocumentParamsSideFront,
+			Type:     rainsdk.ApplicationCompanyUboUploadDocumentParamsTypeIDCard,
 		},
 	)
 	if err != nil {
-		var apierr *rainhelloworld.Error
+		var apierr *rainsdk.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
