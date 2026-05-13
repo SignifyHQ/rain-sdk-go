@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.2.0 (2026-05-13)
+
+Full Changelog: [v0.1.2...v0.2.0](https://github.com/SignifyHQ/rain-sdk-go/compare/v0.1.2...v0.2.0)
+
+### Features
+
+* **client:** optimize json encoder for internal types ([500b032](https://github.com/SignifyHQ/rain-sdk-go/commit/500b0328a15d61504200f796970d143600ac7316))
+
 ## 0.1.2 (2026-05-12)
 
 Full Changelog: [v0.1.1...v0.1.2](https://github.com/SignifyHQ/rain-sdk-go/compare/v0.1.1...v0.1.2)
