@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.3.0 (2026-07-17)
+
+Full Changelog: [v0.2.0...v0.3.0](https://github.com/SignifyHQ/rain-sdk-go/compare/v0.2.0...v0.3.0)
+
+### Features
+
+* **stlc:** configurable CI runner and private-production-repo support in workflow templates ([cf25a53](https://github.com/SignifyHQ/rain-sdk-go/commit/cf25a534b765983de0b478ae652a9e36cae0c61d))
+
 ## 0.2.0 (2026-05-13)
 
 Full Changelog: [v0.1.2...v0.2.0](https://github.com/SignifyHQ/rain-sdk-go/compare/v0.1.2...v0.2.0)
