@@ -1,4 +1,4 @@
 configured_endpoints: 60
-openapi_spec_url: https://storage.googleapis.com/stainless-sdk-openapi-specs/signify-holdings/rain-hello-world-fcb481c61d06aeae43de03533145cc8f614e8ad9309b0f2ee7684d1ee4840c2b.yml
+openapi_spec_url: https://storage.googleapis.com/stainless-sdk-openapi-specs/signify-holdings/rain-hello-world-a55ff0b945514595af152fdaa19da3b7d6c880e44305e80cda6bd12bf328b3ea.yml
 openapi_spec_hash: 2b08f3b547c856bd69c4d1720b9a58fd
-config_hash: ccef946a810ed35a854bcca6ccef47c3
+config_hash: 18f0c459fa249778aa3577cd92c09d91
